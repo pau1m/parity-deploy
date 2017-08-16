@@ -202,62 +202,23 @@ display_engine() {
 
 display_params() {
 
- case $CHAIN_ENGINE in
 
-      dev)
-	cat config/spec/params/instantseal
-	;;
-      aura)
-	cat config/spec/params/aura
-	;;
-      validatorset)
-	cat config/spec/params/validatorset
-	;;
-      tendermint)
-	cat config/spec/params/tendermint
-	;;
-	*)
-	echo "Unknown engine: $CHAIN_ENGINE"
- esac
- 
+  cat config/spec/params/$CHAIN_ENGINE
+
 }
 
 display_genesis() {
 
- case $CHAIN_ENGINE in
 
-      instantseal)
-	cat config/spec/genesis/instantseal
-	;;
-      aura|validatorset)
-	cat config/spec/genesis/aura
-	;;
-      tendermint)
-	cat config/spec/genesis/tendermint
-	;;
-	*)
-	echo "Unknown engine: $CHAIN_ENGINE"
- esac
- 
+  cat config/spec/genesis/$CHAIN_ENGINE
+
 }
 
 
 display_accounts() {
 
- case $CHAIN_ENGINE in
 
-      dev)
-	cat config/spec/accounts/instantseal
-	;;
-      aura|validatorset)
-	cat config/spec/accounts/aura
-	;;
-      tendermint)
-	cat config/spec/accounts/tendermint
-	;;
-	*)
-	echo "Unknown engine: $CHAIN_ENGINE"
- esac
+  cat config/spec/accounts/$CHAIN_ENGINE
  
 }
 
